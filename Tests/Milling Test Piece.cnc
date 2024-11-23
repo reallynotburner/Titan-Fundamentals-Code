@@ -1,8 +1,16 @@
-;Milling Test Piece
+;Milling Test Piece - will a magic feed and speed just work better?
 ;Machine
 ;vendor: Snapmaker
 ;model: Desktop CNC
 ;description: Generic Snapmaker Marlin v20180725
+;tool: 6mm 3 flute endmill
+;The post-processor for Snapmaker doesn't export spindle speeds.
+;I know from on-site experimenation that hand-editing the spindle
+;speed as a percentage, i.e.: P100 is '100% of my 18000 RPM maximum'
+; P50 is 9000 RPM, the minimum controllable speed for Snapmaker'
+;IDK if the machine will update it's speed while running a program.
+;I introduced a 2 second dwell to allow the spindle to ramp up or down
+
 M3 P100
 G4 S2
 G21
@@ -125,7 +133,7 @@ G1 X-38.106 Y-115.408 Z64.525 F500
 
 ;9000-100
 M3 P50
-G4 S2
+G4 S4
 G0 X-29.998 Y-122.054 Z64.525
 G1 X-29.998 Y-122.054 Z64.525 F100
 G1 X-29.998 Y-122.054 Z14.525 F100
@@ -1500,7 +1508,7 @@ G1 X-30.391 Y-122.015 Z64.525 F100
 
 ;13500-100
 M3 P75
-G4 S2
+G4 S4
 G0 X-18.999 Y-122.053 Z24.525
 G1 X-18.999 Y-122.053 Z24.525 F100
 G1 X-18.999 Y-122.053 Z14.525 F100
@@ -2884,7 +2892,7 @@ G1 X-19.950 Y-122.365 Z24.525 F100
 
 ;18000-100
 M3 P100
-G4 S2
+G4 S4
 G0 Z64.525
 G0 X-8.005 Y-122.048 Z64.525
 G1 X-8.005 Y-122.048 Z64.525 F100
@@ -4265,7 +4273,7 @@ G1 X-8.933 Y-122.428 Z64.525 F100
 
 ;9000-150
 M3 P50
-G4 S2
+G4 S4
 G0 X-29.996 Y-133.055 Z64.525
 G1 X-29.996 Y-133.055 Z64.525 F150
 G1 X-29.996 Y-133.055 Z14.525 F150
@@ -5624,7 +5632,7 @@ G1 X-30.391 Y-133.016 Z64.525 F150
 
 ;13500-150
 M3 P75
-G4 S2
+G4 S4
 G0 X-18.998 Y-133.054 Z64.525
 G1 X-18.998 Y-133.054 Z64.525 F150
 G1 X-18.998 Y-133.054 Z14.525 F150
@@ -7008,7 +7016,7 @@ G1 X-19.950 Y-133.365 Z64.525 F150
 
 ;18000-150
 M3 P100
-G4 S2
+G4 S4
 G0 X-7.998 Y-133.054 Z24.525
 G1 X-7.998 Y-133.054 Z24.525 F150
 G1 X-7.998 Y-133.054 Z14.525 F150
@@ -8392,7 +8400,7 @@ G1 X-8.934 Y-133.428 Z24.525 F150
 
 ;9000-200
 M3 P50
-G4 S2
+G4 S4
 G0 Z64.525
 G0 X-30.001 Y-144.052 Z64.525
 G1 X-30.001 Y-144.052 Z64.525 F200
@@ -9760,7 +9768,7 @@ G1 X-30.391 Y-144.016 Z64.525 F200
 
 ;13500-200
 M3 P75
-G4 S2
+G4 S4
 G0 X-19.001 Y-144.051 Z64.525
 G1 X-19.001 Y-144.051 Z64.525 F200
 G1 X-19.001 Y-144.051 Z14.525 F200
@@ -11156,7 +11164,7 @@ G1 X-19.949 Y-144.365 Z64.525 F200
 
 ;18000-200
 M3 P100
-G4 S2
+G4 S4
 G0 X-7.996 Y-144.055 Z64.525
 G1 X-7.996 Y-144.055 Z64.525 F200
 G1 X-7.996 Y-144.055 Z14.525 F200

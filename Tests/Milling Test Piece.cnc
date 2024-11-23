@@ -1,4 +1,7 @@
 ;Milling Test Piece - will a magic feed and speed just work better?
+;Notch is upper left corner.  The pockets are milled out with increasing
+;spindle speed to the right, and feedrate going down.
+;
 ;Machine
 ;vendor: Snapmaker
 ;model: Desktop CNC
@@ -8,6 +11,7 @@
 ;I know from on-site experimenation that hand-editing the spindle
 ;speed as a percentage, i.e.: P100 is '100% of my 18000 RPM maximum'
 ; P50 is 9000 RPM, the minimum controllable speed for Snapmaker'
+; works to specify spindle speed.
 ;IDK if the machine will update it's speed while running a program.
 ;I introduced a 2 second dwell to allow the spindle to ramp up or down
 

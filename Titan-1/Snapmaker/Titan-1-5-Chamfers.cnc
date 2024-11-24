@@ -3,6 +3,8 @@
 ;vendor: Snapmaker
 ;model: Desktop CNC
 ;description: Generic Snapmaker Marlin v20180725
+;tool: 1/8 chamfer mill
+
 M3 P100
 G4 S2
 G21

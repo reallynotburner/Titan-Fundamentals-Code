@@ -4,8 +4,8 @@
 ;vendor: Snapmaker
 ;model: Desktop CNC
 ;description: Generic Snapmaker Marlin v20180725
-M3 P100
-G4 S2
+M3 S10000
+G4 S2 P2
 G21
 G90
 
